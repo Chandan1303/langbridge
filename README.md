@@ -39,6 +39,19 @@ The production server serves the built app and the speech API on the same port.
 Speech playback uses Google Cloud Text-to-Speech for Kannada, Telugu, Hindi,
 Tamil, and Malayalam.
 
+## Deploy to Hugging Face Spaces
+
+This app is ready to run in a Hugging Face Space with a Docker deployment.
+
+1. Create a new Space on Hugging Face and choose the `Docker` SDK.
+2. Connect the Space to this GitHub repository.
+3. In Space settings, add the secret environment variable:
+   - `GOOGLE_CLOUD_TTS_API_KEY`
+4. Keep the app port exposed as `7860`.
+5. The included `Dockerfile` builds the app and starts the production server.
+
+Important: never commit the real API key to the repository. Store it only in the Hugging Face Space secret settings.
+
 ## Map data
 
 The state and union-territory outlines are derived from geoBoundaries
